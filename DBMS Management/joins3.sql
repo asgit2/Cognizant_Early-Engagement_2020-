@@ -1,0 +1,6 @@
+ /*  Student and their Department Based on City */
+
+
+ select s.student_name,d.department_name from student s join
+ department d on s.department_id = d.department_id where
+ city = 'Coimbatore' order by s.student_name;
