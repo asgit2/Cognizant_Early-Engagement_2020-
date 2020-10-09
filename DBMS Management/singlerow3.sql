@@ -44,6 +44,7 @@ order by partner_id;
  select order_date,sum(order_amount) as 'TOTAL_SALE' from orders  group by order_date;
 
 /*  8. Hotels not taken orders in a specific month */
+/* this might give error give me PR for this query */
 
 select h.hotel_id,hotel_name,hotel_type
 from hotel_details h join orders o 
@@ -75,6 +76,7 @@ cars c on o.owner_id=c.owner_id where car_name like 'Maruthi%'
 order by o.owner_id  ;
 
 /*  12.  Cars not taken for rent */
+/* change the sequence as per question this might not pass the test case */
 
 select distinct c.car_id,c.car_name,c.car_type from
 cars c join rentals r
