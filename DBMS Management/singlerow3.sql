@@ -44,14 +44,17 @@ order by partner_id;
  select order_date,sum(order_amount) as 'TOTAL_SALE' from orders  group by order_date;
 
 /*  8. Hotels not taken orders in a specific month */
-/* this might give error give me PR for this query */
 
-select h.hotel_id,hotel_name,hotel_type
-from hotel_details h join orders o 
-on h.hotel_id <> o.hotel_id
-where month(o.order_date)!=5 and 
-year(o.order_date)!=2019
-order by h.hotel_id;
+SELECT hotel_id, hotel_name, hotel_type 
+FROM hotel_details h 
+WHERE NOT EXISTS (
+  SELECT 1 
+  FROM orders o
+  WHERE o.hotel_id = h.hotel_id 
+    AND MONTH(order_date) = 5 
+    AND YEAR(order_date) = 2019
+) 
+order by h.hotel_id asc;
 
 /*  9. Hotels that took order more than five times */
 
