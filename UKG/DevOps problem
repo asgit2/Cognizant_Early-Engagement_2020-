@@ -1,0 +1,32 @@
+You are working on the application development process using the "feature branch" strategy. When implementing new functionality in the "feature" Git branch you notice that the "master" branch has received an urgent hotfix that should be applied to the "feature" branch.
+Using the existing Git repository
+*/home/ubuntu/1326049-git-rebase-master-branch":
+• Implement functionality to rebase the
+"master" Git branch onto the "feature"
+Git branch.
+The "master" Git branch should remain intact and look like this:
+• "Hotfix" (last commit)
+• "Initialize" (first commit)
+The "feature" Git branch should receive a commit from the "master" Git branch with a "Hotfix" message and look like this:
+• "Add c.html" (last commit)
+Note:
+• The completed solution will be evaluated in a new, clean environment.
+ONLY CHANGES IN
+*/home/ubuntu/1326049-git-rebase-master-branch" WILL BE CARRIED TO THE NEW ENVIRONMENT. ALL CHANGES OUTSIDE THIS DIRECTORY WILL BE LOST.
+• "Add b.html"
+• "Add a.html"
+• "Hotfix"
+• "Initialize" (first commit)
+The first two commits in both Git branches must be identical.
+
+
+Solution: 
+
+cd /home/ubuntu/1326049-git-rebase-master-branch
+git checkout feature
+git fetch origin
+git rebase master
+git add <file_with_conflicts>
+git rebase --continue
+git log --oneline --graph --all
+git push origin feature --force
