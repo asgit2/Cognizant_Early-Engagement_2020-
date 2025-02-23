@@ -1,5 +1,7 @@
-# Cognizent Early Engagement | 2020
- Cognizent 2020 code in java
- [ I am going to update this repository as i proceed further ]
- 
-
+ My Coding Journey
+Cognizant Early Engagement | 2020
+IBM Coding Round
+Infosys Finacle
+UKG HackerRank
+📌 This repository will always be updated as I grow in my journey.
+🤝 Contributions are welcome! Feel free to collaborate.
